@@ -1,7 +1,7 @@
 {
   "name": "kmore-cli",
   "author": "waiting",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Command line for kmore",
   "keywords": [
     "kmore",
