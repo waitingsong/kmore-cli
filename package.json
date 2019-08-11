@@ -2,7 +2,7 @@
   "name": "kmore-cli",
   "author": "waiting",
   "version": "0.1.0",
-  "description": "Command line for kmore",
+  "description": "Command line to generate config of tables from ts types file for kmore",
   "keywords": [
     "kmore",
     "knex",
