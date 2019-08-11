@@ -1,29 +1,32 @@
 {
-  "name": "npm-base",
+  "name": "kmore-cli",
   "author": "waiting",
   "version": "0.0.1",
-  "description": "npm boilerplate",
+  "description": "Command line for kmore",
   "keywords": [
-    "种子项目",
+    "kmore",
+    "knex",
     "typescript",
     "ts"
   ],
   "engines": {
     "node": ">=10.13.0"
   },
-  "bin": {},
+  "bin": {
+    "kmore": "./dist/bin/kmore-cli.js"
+  },
   "browser": "",
   "es2015": "",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bugs": {
-    "url": "https://github.com/waitingsong/npm-base/issues"
+    "url": "https://github.com/waitingsong/kmore-cli/issues"
   },
-  "homepage": "https://github.com/waitingsong/npm-base#readme",
+  "homepage": "https://waitingsong.github.io/kmore-cli/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waitingsong/npm-base.git"
+    "url": "git+https://github.com/waitingsong/kmore-cli.git"
   },
   "license": "MIT",
   "nyc": {
@@ -48,7 +51,11 @@
     "all": true
   },
   "dependencies": {
-    "rxjs": "^6.5.2"
+    "@waiting/log": "^1.0.1",
+    "@waiting/shared-core": "^1.9.2",
+    "kmore-types": "^1.0.0",
+    "rxjs": "^6.5.2",
+    "yargs": "^13.0.0"
   },
   "devDependencies": {
     "@types/mocha": "*",
@@ -74,13 +81,12 @@
     "rollup-plugin-terser": "^5.0.0",
     "rxrunscript": "^5.2.0",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.0",
-    "yargs": "^13.0.0"
+    "typescript": "^3.5.0"
   },
   "scripts": {
     "bp:add": "git remote add bp https://github.com/waitingsong/npm-base",
     "bp:sync": "git fetch --all -v && git merge bp/master -m \"Merge remote-tracking branch 'bp/master'\"",
-    "build": "npm run lint && npm run tsc && npm run rp",
+    "build": "npm run clean && npm run lint && npm run tsc && npm run rp",
     "devbuild": "npm run clean && npm run tsc:dev && npm run rp",
     "clean": "rm -rf dist/* .vscode/.tsbuildinfo .vscode/.tsbuildinfo.* ",
     "cov": "cross-env TS_NODE_PROJECT=test/tsconfig.json nyc mocha",
