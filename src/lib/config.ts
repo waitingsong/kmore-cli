@@ -10,7 +10,7 @@ export const tw3 = '\t'.repeat(3)
 export const initialCliArgs: CliArgs = {
   cmd: void 0,
   options: {
-    baseDirFile: '',
+    path: '',
   },
   needHelp: false,
   debug: false,

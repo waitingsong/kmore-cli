@@ -52,8 +52,8 @@
   },
   "dependencies": {
     "@waiting/log": "^1.0.1",
-    "@waiting/shared-core": "^1.9.2",
-    "kmore-types": "^1.0.0",
+    "@waiting/shared-core": "^2.1.0",
+    "kmore-types": "^0.6.0",
     "rxjs": "^6.5.2",
     "yargs": "^13.0.0"
   },

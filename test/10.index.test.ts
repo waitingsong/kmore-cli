@@ -17,7 +17,7 @@ describe(filename, () => {
         cmd: 'gen',
         debug: true,
         options: {
-          baseDirFile: './test',
+          path: './test',
         },
       }
 
@@ -40,7 +40,7 @@ describe(filename, () => {
         cmd: 'gen',
         debug: true,
         options: {
-          baseDirFile: './test',
+          path: './test',
         },
       }
 

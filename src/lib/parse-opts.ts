@@ -48,8 +48,7 @@ export function parseCliOpts(
 ): CliArgs['options'] {
 
   const opts = mergeOptions<BuildSrcOpts>(initialCliArgs.options, inputOptions)
-
-  opts.baseDirFile = parseMultiValue(opts.baseDirFile)
+  opts.path = parseMultiValue(opts.path)
   return opts
 }
 
