@@ -38,7 +38,7 @@ function parseCmd(args: string[]): CmdType {
     const help = helpDefault()
     throw new Error(help)
   }
-  return <CmdType> command
+  return command as CmdType
 }
 
 
@@ -59,7 +59,7 @@ export function mergeOptions<T>(
 ): T {
 
   const opts: T = { ...initOptions }
-  const propMap = <Map<string, string>> new Map() // <upperKey, oriKey>
+  const propMap: Map<string, string> = new Map() // <upperKey, oriKey>
 
   Object.keys(opts).forEach((key) => {
     propMap.set(key.toUpperCase(), key)
@@ -69,7 +69,7 @@ export function mergeOptions<T>(
     const upperKey = key.toUpperCase()
 
     if (propMap.has(upperKey)) {
-      Object.defineProperty(opts, <string> propMap.get(upperKey), {
+      Object.defineProperty(opts, propMap.get(upperKey) as string, {
         configurable: true,
         enumerable: true,
         writable: true,
