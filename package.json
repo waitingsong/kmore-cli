@@ -1,32 +1,29 @@
 {
-  "name": "kmore-cli",
+  "name": "npm-base",
   "author": "waiting",
-  "version": "0.2.0",
-  "description": "Command line to generate config of tables from ts types file for kmore",
+  "version": "0.0.1",
+  "description": "npm boilerplate",
   "keywords": [
-    "kmore",
-    "knex",
+    "种子项目",
     "typescript",
     "ts"
   ],
   "engines": {
     "node": ">=10.13.0"
   },
-  "bin": {
-    "kmore": "./dist/bin/kmore-cli.js"
-  },
+  "bin": {},
   "browser": "",
   "es2015": "",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bugs": {
-    "url": "https://github.com/waitingsong/kmore-cli/issues"
+    "url": "https://github.com/waitingsong/npm-base/issues"
   },
-  "homepage": "https://waitingsong.github.io/kmore-cli/",
+  "homepage": "https://github.com/waitingsong/npm-base#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waitingsong/kmore-cli.git"
+    "url": "git+https://github.com/waitingsong/npm-base.git"
   },
   "license": "MIT",
   "nyc": {
@@ -51,11 +48,7 @@
     "all": true
   },
   "dependencies": {
-    "@waiting/log": "^1.0.1",
-    "@waiting/shared-core": "^2.1.0",
-    "kmore-types": "^0.6.0",
-    "rxjs": "^6.5.2",
-    "yargs": "^13.0.0"
+    "rxjs": "^6.5.2"
   },
   "devDependencies": {
     "@types/mocha": "*",
@@ -81,12 +74,13 @@
     "rollup-plugin-terser": "^5.0.0",
     "rxrunscript": "^5.2.0",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.0"
+    "typescript": "^3.5.0",
+    "yargs": "^13.0.0"
   },
   "scripts": {
     "bp:add": "git remote add bp https://github.com/waitingsong/npm-base",
     "bp:sync": "git fetch --all -v && git merge bp/master -m \"Merge remote-tracking branch 'bp/master'\"",
-    "build": "npm run clean && npm run lint && npm run tsc && npm run rp",
+    "build": "npm run lint && npm run tsc && npm run rp",
     "devbuild": "npm run clean && npm run tsc:dev && npm run rp",
     "clean": "rm -rf dist/* .vscode/.tsbuildinfo .vscode/.tsbuildinfo.* ",
     "cov": "cross-env TS_NODE_PROJECT=test/tsconfig.json nyc mocha",
@@ -95,6 +89,7 @@
     "jslint": "eslint --fix dist/**/*.js",
     "link_global": "npm link typescript",
     "lint": "eslint --fix {src,test}/**/*.ts",
+    "postpublish": "git push origin --follow-tags",
     "prepublishOnly": "npm run clean && npm run build",
     "release": "standard-version -r",
     "release:first": "standard-version --first-release",
